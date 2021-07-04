@@ -1,0 +1,24 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+{% endblock %}
+
+<!-- Content block -->
+{% block content %}
+<div class="container-fluid">
+<!-- Popular movie -->
+<h1> Popular Movies</h1>
+    {{ macro.displayMovieList(popular)}}
+<h1> Upcoming Movies </h1>
+    {{ macro.displayMovieList(upcoming)}}
+<h1>Now Showing</h1>
+    {{ macro.displayMovieList(now_showing)}}
+</div>
+
+{% endblock%}

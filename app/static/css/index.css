@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css?family=Coustard:300,400&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Lato:300,900);
+
+body {
+  background-color: #272727;
+  text-align: center;
+  font-family: Lato;
+}
+
+p {
+  font-size: 25px;
+}
+
+p strong {
+  font-family: Lato;
+  font-size: 40px;
+}
+
+.item {
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  position: relative;
+  display: inline-block;
+  margin: 1% 2% 1% 0%;
+  overflow: hidden;
+  box-shadow: 2px 3px 10px #444444;
+}
+
+.item .overlay {
+  color: #000;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.5s ease;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+/* effect-explode */
+.explode .overlay span:nth-child(1) {
+  position: absolute;
+  left: 10%;
+  top: 45%;
+  font-size: 200px;
+  font-weight: bold;
+  font-family: coustard;
+  transform: translateX(-50%);
+  opacity: 0;
+}
+
+.explode .overlay span:nth-child(2) {
+  position: absolute;
+  top: 80%;
+  left: 10%;
+  font-size: 17px;
+  opacity: 0;
+}
+
+.explode .overlay span:nth-child(3) {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  height: 60px;
+  background-color: #000;
+}
+
+.explode .overlay:hover {
+  opacity: 0.9;
+}
+
+.explode .overlay:hover span:nth-child(1) {
+  animation: focus 0.4s forwards;
+  animation-delay: 0.2s;
+}
+
+.explode .overlay:hover span:nth-child(2) {
+  animation: focus 0.4s forwards;
+  animation-delay: 0.4s;
+}
+
+.explode .overlay:hover span:nth-child(3) {
+  animation: block 0.3s forwards;
+  animation-delay: 0.15s;
+}
+
+@keyframes focus {
+  0% {
+    transform: scale(1.4) translateX(-30%);
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateX(0%);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes block {
+  0% {
+    width: 0;
+    filter: blur(5px);
+    opacity: 0;
+  }
+  100% {
+    width: 100%;
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+h1 {
+  width: 370px;
+  margin: 19vh auto;
+  border: 8px double #fff;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 48px;
+  letter-spacing: 2px;
+  box-shadow: 0 0 5px #007, 1px 0px #007, 2px 1px #007, 3px 2px #007,
+    4px 3px 3px #007;
+  text-shadow: 0 0 3px #007, 1px 0px #007, 2px 1px #007, 3px 2px #007,
+    4px 3px #007;
+  text-align: center;
+}
+
+.h1 {
+  font-size: 36px;
+  margin: auto;
+}
