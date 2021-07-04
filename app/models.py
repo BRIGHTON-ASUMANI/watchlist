@@ -72,6 +72,8 @@ class User(UserMixin, db.Model):
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String())
     pass_secure = db.Column(db.String(255))
+    DOB = db.Column(db.DateTime)
+    MF = db.Column(db.String)
 
     @property
     def password(self):

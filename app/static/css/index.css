@@ -46,7 +46,7 @@ p strong {
   position: absolute;
   left: 10%;
   top: 45%;
-  font-size: 200px;
+  font-size: 40px;
   font-weight: bold;
   font-family: coustard;
   transform: translateX(-50%);
@@ -116,18 +116,18 @@ p strong {
 
 h1 {
   width: 370px;
-  margin: 19vh auto;
+  /* margin: 19vh auto; */
   border: 8px double #fff;
   border-radius: 16px;
   color: #fff;
-  font-size: 48px;
+  font-size: 18px;
   letter-spacing: 2px;
   box-shadow: 0 0 5px #007, 1px 0px #007, 2px 1px #007, 3px 2px #007,
     4px 3px 3px #007;
   text-shadow: 0 0 3px #007, 1px 0px #007, 2px 1px #007, 3px 2px #007,
     4px 3px #007;
   text-align: center;
-  align-items: center;
+  font-family: Lato;
 }
 
 .h1 {

@@ -15,7 +15,8 @@ def register():
     title = "New Account"
     if form.validate_on_submit():
         user = User(email=form.email.data,
-                    username=form.username.data, password=form.password.data)
+                    username=form.username.data, password=form.password.data,
+                    DOB=form.DOB.data, MF=form.MF.data)
         db.session.add(user)
         db.session.commit()
 

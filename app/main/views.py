@@ -98,6 +98,8 @@ def update_profile(uname):
 
     if form.validate_on_submit():
         user.bio = form.bio.data
+        user.MF = form.MF.data
+        user.DOB = form.DOB.data
 
         db.session.add(user)
         db.session.commit()

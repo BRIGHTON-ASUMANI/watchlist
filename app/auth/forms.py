@@ -1,8 +1,11 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField
+from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField
+from wtforms.fields.html5 import DateField, TimeField
 from wtforms.validators import Required, Email, EqualTo
 from ..models import User
 from wtforms import ValidationError
+
+from datetime import datetime
 
 
 class RegistrationForm(FlaskForm):
@@ -12,6 +15,8 @@ class RegistrationForm(FlaskForm):
         'password_confirm', message='Passwords must match')])
     password_confirm = PasswordField(
         'Confirm Password', validators=[Required()])
+    DOB = DateField('DOB', format='%Y-%m-%d', default=datetime.now())
+    MF = SelectField('Gender', choices=[('M', 'Male'), ('F', 'Female')])
     submit = SubmitField('Sign Up', render_kw={'class': 'login-button'})
 
     def validate_email(self, data_field):
