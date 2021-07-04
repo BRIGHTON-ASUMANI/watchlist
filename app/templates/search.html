@@ -1,17 +1,18 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/search.css')}}">
+{% endblock %}
+
 {% block content %}
-    <div class="container">
-        <div class="row">
-
-            <h3> Found {{ movies| count }} matches </h3>
-            <hr>
-            <ul>
-                {{ macro.displayMovieList(movies)}}
-            </ul>
-
-        </div>
-
+    <div class="container-fluid">
+        <h1> Found {{ movies| count }} matches </h1>
+            {{ macro.displayMovieList(movies)}}
+        </ul>
     </div>
 {% endblock %}

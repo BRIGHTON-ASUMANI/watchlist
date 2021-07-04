@@ -11,19 +11,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
             </ul>
-            <div class="col-sm-3 col-md-3">
-                
-                <form class="navbar-form" role="search">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search" name="movie_query">
-                    <div class="input-group-btn">
-                        <button class="btn btn-" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-                    </div>
-                </div>
-                </form>
-            </div>
             <ul class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
                 <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>

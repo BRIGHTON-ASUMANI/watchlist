@@ -2,7 +2,9 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,900);
 
 body {
-  background-color: #272727;
+  background-image: url("../images/bat.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
   font-family: Lato;
 }
@@ -125,6 +127,7 @@ h1 {
   text-shadow: 0 0 3px #007, 1px 0px #007, 2px 1px #007, 3px 2px #007,
     4px 3px #007;
   text-align: center;
+  align-items: center;
 }
 
 .h1 {
