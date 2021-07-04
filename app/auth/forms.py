@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, SelectField
+from wtforms.fields.core import RadioField
 from wtforms.fields.html5 import DateField, TimeField
 from wtforms.validators import Required, Email, EqualTo
 from ..models import User
@@ -9,14 +10,18 @@ from datetime import datetime
 
 
 class RegistrationForm(FlaskForm):
-    email = StringField('Your Email Address', validators=[Required(), Email()])
-    username = StringField('Enter your username', validators=[Required()])
+    email = StringField('Your Email Address', validators=[
+                        Required(), Email()], render_kw={'class': 'input-group'})
+    username = StringField('Enter your username', validators=[
+                           Required()], render_kw={'class': 'input-group'})
     password = PasswordField('Password', validators=[Required(), EqualTo(
-        'password_confirm', message='Passwords must match')])
+        'password_confirm', message='Passwords must match')], render_kw={'class': 'input-group'})
     password_confirm = PasswordField(
         'Confirm Password', validators=[Required()])
-    DOB = DateField('DOB', format='%Y-%m-%d', default=datetime.now())
-    MF = SelectField('Gender', choices=[('M', 'Male'), ('F', 'Female')])
+    DOB = DateField('DOB', format='%Y-%m-%d',
+                    default=datetime.now(), render_kw={'class': 'input-group'})
+    MF = RadioField('Gender', choices=[
+                    ('Male', 'Male'), ('Female', 'Female')], render_kw={'class': 'input-group'})
     submit = SubmitField('Sign Up', render_kw={'class': 'login-button'})
 
     def validate_email(self, data_field):

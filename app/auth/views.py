@@ -19,10 +19,10 @@ def register():
                     DOB=form.DOB.data, MF=form.MF.data)
         db.session.add(user)
         db.session.commit()
-
+        login_user(user)
         mail_message("Welcome to watchlist",
                      "email/welcome_user", user.email, user=user)
-        login_user(user)
+
         return redirect(url_for('main.index'))
     return render_template('auth/register.html', registration_form=form)
 

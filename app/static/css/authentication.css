@@ -18,7 +18,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("../images/bat.jpg");
+  background-image: url("../images/aven.jpg");
   opacity: 1.75;
 }
 
@@ -51,6 +51,23 @@ body {
   font-size: 1.5em;
   margin-bottom: 7px;
 }
+
+.radio label {
+  color: #fff;
+  font-weight: lighter;
+  font-size: 1.5em;
+  margin-bottom: 7px;
+  float: left;
+  padding: 0px 1em 0px 8px;
+}
+
+input[type="radio"],
+input.radio {
+  float: left;
+  clear: none;
+  margin: 2px 0 0 2px;
+}
+
 p {
   color: #fff;
 }
