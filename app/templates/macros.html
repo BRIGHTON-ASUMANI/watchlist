@@ -1,14 +1,14 @@
 {% macro displayMovieList(movie_list) %}
 
     {% for movie in movie_list %}
-    <a href="/movie/{{movie.id}}">
-      <div class="item explode">
-          <img src="{{ movie.poster }}" alt="{{ movie.title }} poster" class="img-responsive">
-          <div class="overlay">
-            <span>{{ movie.title}}</span>
+          <div class="item explode">
+            <img src="{{ movie.poster }}" alt="{{ movie.title }} poster" class="img-responsive">
+            <div class="overlay">
+              <span>{{ movie.title}}</span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
-        </div>
-      </a>
 
     {% endfor %}
 {% endmacro %}
