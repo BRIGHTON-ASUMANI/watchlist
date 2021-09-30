@@ -18,10 +18,6 @@ class RegistrationForm(FlaskForm):
         'password_confirm', message='Passwords must match')], render_kw={'class': 'input-group'})
     password_confirm = PasswordField(
         'Confirm Password', validators=[Required()])
-    DOB = DateField('DOB', format='%Y-%m-%d',
-                    default=datetime.now(), render_kw={'class': 'input-group'})
-    MF = RadioField('Gender', choices=[
-                    ('Male', 'Male'), ('Female', 'Female')], render_kw={'class': 'input-group'})
     submit = SubmitField('Sign Up', render_kw={'class': 'login-button'})
 
     def validate_email(self, data_field):
