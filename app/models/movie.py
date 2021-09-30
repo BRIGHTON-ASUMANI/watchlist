@@ -1,6 +1,6 @@
 class Movie:
     '''
-    Movie class to define Movie Objects
+    Movie class to define Movie Objects and reviews
     '''
 
     def __init__(self, id, title, overview, poster, vote_average, vote_count):
