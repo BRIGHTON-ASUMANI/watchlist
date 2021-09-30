@@ -35,6 +35,22 @@ class ProdConfig(Config):
         Config: The parent configuration class with General configuration settings
     '''
     SQLALCHEMY_DATABASE_URI = getenv("PROD_DATABASE_URL")
+    MOVIE_API_BASE_URL = 'https://api.themoviedb.org/3/movie/{}?api_key={}'
+    MOVIE_API_KEY = getenv('MOVIE_API_KEY')
+    SECRET_KEY = getenv('SECRET_KEY')
+    UPLOADED_PHOTOS_DEST = 'app/static/photos'
+    SQLALCHEMY_DATABASE_URI = getenv('SQLALCHEMY_DATABASE_URI')
+
+    #  email configurations
+    MAIL_SERVER = getenv('MAIL_SERVER')
+    MAIL_PORT = 465
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = getenv('MAIL_USERNAME')
+    MAIL_PASSWORD = getenv('MAIL_PASSWORD')
+    MAIL_USE_TLS = False
+    MAIL_USE_SSL = True
+    SIMPLEMDE_JS_IIFE = True
+    SIMPLEMDE_USE_CDN = True
 
 
 class DevConfig(Config):
